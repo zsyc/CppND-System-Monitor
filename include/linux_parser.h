@@ -40,18 +40,20 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
+/* According to the Answer in "https://knowledge.udacity.com/questions/199377", the followed functions doesn't need to implement. They are out of date */
 std::vector<std::string> CpuUtilization();
 long Jiffies();
 long ActiveJiffies();
 long ActiveJiffies(int pid);
 long IdleJiffies();
-
+/********************************************/
 // Processes
 std::string Command(int pid);
 std::string Ram(int pid);
 std::string Uid(int pid);
 std::string User(int pid);
 long int UpTime(int pid);
+float CpuUtilization(int pid);
 };  // namespace LinuxParser
 
 #endif
