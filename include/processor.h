@@ -8,7 +8,8 @@ class Processor {
  private:
     struct cpu{
         int user, nice, system, idle, iowait, irq, softirq, steal;
-    }stat1, stat2;
+    }stat;
+    int _preIdle=-1, _preTotal=-1;
 };
 
 #endif

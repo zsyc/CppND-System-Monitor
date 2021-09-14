@@ -18,6 +18,23 @@ const std::string kVersionFilename{"/version"};
 const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
 
+// Key strings
+const std::string filterPrettyname("PRETTY_NAME");
+const std::string filterProcesses("processes");
+const std::string filterRunningProcesses("procs_running");
+  //memory
+const std::string filterMemTotalString("MemTotal");
+const std::string filterMemFreeString("MemFree");
+const std::string filterBuffers("Buffers");
+const std::string filterCached("Cached");
+
+const std::string filterCpu("cpu");
+const std::string filterUID("Uid");
+  // according last review: "VmRSS" instead of "VmSize", because we need phsical RAM instead of Virtual RAM
+const std::string filterProcMem("VmRSS"); 
+
+
+
 // System
 float MemoryUtilization();
 long UpTime();
@@ -40,13 +57,7 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
-/* According to the Answer in "https://knowledge.udacity.com/questions/199377", the followed functions doesn't need to implement. They are out of date */
-std::vector<std::string> CpuUtilization();
-long Jiffies();
-long ActiveJiffies();
-long ActiveJiffies(int pid);
-long IdleJiffies();
-/********************************************/
+
 // Processes
 std::string Command(int pid);
 std::string Ram(int pid);
